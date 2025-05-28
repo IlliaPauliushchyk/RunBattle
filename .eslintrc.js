@@ -1,6 +1,6 @@
 module.exports = {
   root: true,
-  extends: ['@react-native'],
+  extends: ['@react-native', 'plugin:@tanstack/query/recommended'],
   plugins: ['prefer-arrow-functions'],
   rules: {
     // 'prettier/prettier': ['warn'],

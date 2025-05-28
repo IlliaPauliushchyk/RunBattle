@@ -3,7 +3,7 @@ import React from 'react';
 import {StyleProp, StyleSheet, TextStyle} from 'react-native';
 import {Button, ButtonProps} from 'react-native-paper';
 
-type Props = {
+interface Props extends ButtonProps {
   style?: StyleProp<TextStyle>;
   contentStyle?: StyleProp<TextStyle>;
   textStyle?: StyleProp<TextStyle>;
@@ -21,7 +21,8 @@ type Props = {
   mr?: number;
   mb?: number;
   ml?: number;
-};
+  onPress: (args: any) => any;
+}
 
 export const AppButton = ({
   style,
@@ -29,7 +30,7 @@ export const AppButton = ({
   onPress,
   contentStyle,
   ...rest
-}: ButtonProps & Props) => {
+}: Props) => {
   return (
     <Button
       mode="contained"
@@ -44,6 +45,6 @@ export const AppButton = ({
 
 const styles = StyleSheet.create({
   buttonContent: {
-    height: 50,
+    height: 45,
   },
 });

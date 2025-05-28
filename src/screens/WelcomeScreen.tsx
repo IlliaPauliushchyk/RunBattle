@@ -3,6 +3,7 @@ import {Screens} from '@/constants';
 import {defaultContainerStyle} from '@/styles';
 import {useNavigation} from '@react-navigation/native';
 import React from 'react';
+import {useTranslation} from 'react-i18next';
 import {ImageBackground, StyleSheet} from 'react-native';
 import {Card, useTheme} from 'react-native-paper';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
@@ -11,35 +12,40 @@ export const WelcomeScreen = () => {
   const navigation = useNavigation<any>();
   const insets = useSafeAreaInsets();
 
+  const {t} = useTranslation();
   const {colors} = useTheme();
 
   const paddingBottom = insets.bottom + 20;
+  const marginTop = -insets.top;
+  const marginBottom = -insets.bottom;
 
   const goToSignUp = () => navigation.navigate(Screens.signUp);
   const goToSignIn = () => navigation.navigate(Screens.signIn);
 
   return (
-    <ScreenContainer>
+    <ScreenContainer viewType="safeAreaView">
       <ImageBackground
-        style={[styles.container, {paddingBottom}]}
+        style={[styles.container, {marginTop, marginBottom, paddingBottom}]}
         source={require('@/assets/images/welcome_bg.jpg')}>
         <Card>
           <Card.Content style={styles.content}>
-            <AppText mb={10} textAlign="center" variant="headlineMedium">
-              Преврати каждый забег в приключение!
+            <AppText
+              mb={10}
+              textAlign="center"
+              fontWeight={'bold'}
+              variant="headlineSmall">
+              {t('titles.welcome')}
             </AppText>
             <AppText textAlign="center" mb={10} variant="bodyMedium">
-              Создавай уникальные маршруты, соревнуйся с друзьями и покоряй топы
-              лидеров. Беги, зарабатывай достижения и становись королём
-              городских троп!
+              {t('text.welcome')}
             </AppText>
             <AppButton onPress={goToSignUp} mb={10}>
-              Начать
+              {t('buttons.start')}
             </AppButton>
             <AppText textAlign="center" variant="bodyMedium">
-              Уже есть аккаунт?{' '}
+              {t('text.hasAccount')}{' '}
               <AppText onPress={goToSignIn} color={colors.primary}>
-                Логин
+                {t('text.logIn')}
               </AppText>
             </AppText>
           </Card.Content>
@@ -56,6 +62,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   content: {
-    paddingHorizontal: 40,
+    paddingHorizontal: 25,
   },
 });

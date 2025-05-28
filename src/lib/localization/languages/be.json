@@ -1,0 +1,59 @@
+{
+  "translation": {
+    "titles": {
+      "signUp": "Рэгістрацыя",
+      "logIn": "Уваход",
+      "welcome": "Пераўтвары кожны забег у прыгоду!",
+      "emailVerification": "Пацвярджэнне пошты",
+      "forgotPassword": "Забылі свой пароль?"
+    },
+    "text": {
+      "welcome": "Стварай унікальныя маршруты, спаборнічай з сябрамі і пакарай топы лідэраў. Бяжы, зарабляй дасягненні і станавіся каралём гарадскіх сцежак!",
+      "hasAccount": "Ужо ёсць акаўнт?",
+      "noAccount": "Няма акаўнта?",
+      "logIn": "Уваход",
+      "signUp": "Рэгістрацыя",
+      "emailVerificationDescription": "На працягу хвіліны вам будзе выслана ліст на ўказаную пошту, перайдзіце па спасылцы з ліста, каб пацвердзіць сваю рэгістрацыю.",
+      "waitOneMinuteMessage": "Даслаць яшчэ раз праз",
+      "sec": "сек",
+      "forgotPassword": "Увядзіце адрас электроннай пошты, звязаны з вашым уліковым запісам"
+    },
+    "inputs": {
+      "inputFirstNameLabel": "Імя",
+      "inputFirstNamePlaceholder": "Увядзіце імя",
+      "inputEmailLabel": "Пошта",
+      "inputEmailPlaceholder": "Увядзіце пошту",
+      "inputPasswordLabel": "Пароль",
+      "inputPasswordPlaceholder": "Увядзіце пароль",
+      "inputConfirmPasswordLabel": "Пацвердзіць пароль",
+      "inputConfirmPasswordPlaceholder": "Пацвердзіце пароль"
+    },
+    "buttons": {
+      "start": "Пачаць",
+      "logIn": "Увайсці",
+      "signUp": "Зарэгістравацца",
+      "sendAgain": "Адправіць яшчэ раз",
+      "forgotPassword": "Забыліся свой пароль?",
+      "send": "Даслаць"
+    },
+    "validation": {
+      "nameValidation": "Увядзіце сваё імя",
+      "emailValidation": "Увядзіце сваю пошту",
+      "passwordValidation": "Увядзіце свой пароль",
+      "currentPasswordValidation": "Увядзіце ваш бягучы пароль",
+      "confirmPasswordValidation": "Пацвердзіце ваш пароль",
+      "newPasswordValidation": "Увядзіце ваш новы пароль",
+      "min5Validation": "Поле павінна быць больш або роўна 5 сімвалам",
+      "min6Validation": "Поле павінна быць больш або роўна 6 сімвалам",
+      "min8Validation": "Поле павінна быць больш або роўна 8 сімвалам",
+      "max4Validation": "Поле павінна быць менш або роўна 4 сімвалам",
+      "max32Validation": "Поле павінна быць менш або роўна 32 сімвалам",
+      "max50Validation": "Поле павінна быць менш або роўна 50 сімвалам",
+      "max64Validation": "Поле павінна быць меншым або роўным 64 сімвалам",
+      "onlyLatinAndHyphenValidation": "Калі ласка, уводзіце толькі літары алфавіту, злучок (-) і прабелы",
+      "emailFormatValidation": "Праверце фармат электроннай пошты",
+      "passwordsMatchValidation": "Пароль і пароль пацверджання не супадаюць",
+      "passwordFormatValidation": "Пароль павінен складацца не менш за з шасці знакаў, уключаючы адну загалоўную літару, адну маленькую літару, адну лічбу (0–9), адзін знак (напрыклад, !@#$%^&*) і быць без прабелаў"
+    }
+  }
+}

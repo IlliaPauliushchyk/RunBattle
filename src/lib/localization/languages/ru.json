@@ -1,0 +1,59 @@
+{
+  "translation": {
+    "titles": {
+      "signUp": "Регистрация",
+      "logIn": "Вход",
+      "welcome": "Преврати каждый\nзабег в приключение!",
+      "emailVerification": "Подтверждение почты",
+      "forgotPassword": "Забыли свой пароль?"
+    },
+    "text": {
+      "welcome": "Создавай уникальные маршруты, соревнуйся с друзьями и покоряй топы лидеров. Беги, зарабатывай достижения и становись королём городских троп!",
+      "hasAccount": "Уже есть аккаунт?",
+      "noAccount": "Нет аккаунта?",
+      "logIn": "Вход",
+      "signUp": "Регистрация",
+      "emailVerificationDescription": "В течение минуты вам будет выслано письмо на указаную почту, перейдите по ссылке из письма, чтобы подтвердить свою регистрацию.",
+      "waitOneMinuteMessage": "Отправить еще раз через",
+      "sec": "сек",
+      "forgotPassword": "Введите адрес электронной почты, связанный с вашей учетной записью"
+    },
+    "inputs": {
+      "inputFirstNameLabel": "Имя",
+      "inputFirstNamePlaceholder": "Введите имя",
+      "inputEmailLabel": "Почта",
+      "inputEmailPlaceholder": "Введите почту",
+      "inputPasswordLabel": "Пароль",
+      "inputPasswordPlaceholder": "Введите пароль",
+      "inputConfirmPasswordLabel": "Подтвердить пароль",
+      "inputConfirmPasswordPlaceholder": "Подтвердите пароль"
+    },
+    "buttons": {
+      "start": "Начать",
+      "logIn": "Войти",
+      "signUp": "Зарегистрироваться",
+      "sendAgain": "Отпрвить еще раз",
+      "forgotPassword": "Забыли свой пароль?",
+      "send": "Отправить"
+    },
+    "validation": {
+      "nameValidation": "Введите своё имя",
+      "emailValidation": "Введите свою почту",
+      "passwordValidation": "Введите свой пароль",
+      "currentPasswordValidation": "Введите ваш текущий пароль",
+      "confirmPasswordValidation": "Подтвердите ваш пароль",
+      "newPasswordValidation": "Введите ваш новый пароль",
+      "min5Validation": "Поле должно быть больше или равно 5 символам",
+      "min6Validation": "Поле должно быть больше или равно 6 символам",
+      "min8Validation": "Поле должно быть больше или равно 8 символам",
+      "max4Validation": "Поле должно быть меньше или равно 4 символам",
+      "max32Validation": "Поле должно быть меньше или равно 32 символам",
+      "max50Validation": "Поле должно быть меньше или равно 50 символам",
+      "max64Validation": "Поле должно быть меньше или равно 64 символам",
+      "onlyLatinAndHyphenValidation": "Пожалуйста, вводите только буквы алфавита, дефис (-) и пробелы",
+      "emailFormatValidation": "Проверьте формат электронной почты",
+      "passwordsMatchValidation": "Пароль и пароль подтверждения не совпадают",
+      "passwordFormatValidation": "Пароль должен состоять не менее чем из шести символов, включая одну заглавную букву, одну строчную букву, одну цифру (0–9), один символ (например, !@#$%^&*) и быть без пробелов"
+    }
+  }
+}

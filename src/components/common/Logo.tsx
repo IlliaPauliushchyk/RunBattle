@@ -1,15 +1,23 @@
 import React from 'react';
-import {Image, StyleSheet, View} from 'react-native';
-import {Text} from 'react-native-paper';
+import {Image, StyleProp, StyleSheet, View, ViewStyle} from 'react-native';
 
-export const Logo = () => {
+type Props = {
+  width?: number;
+  height: number;
+  style?: StyleProp<ViewStyle>;
+};
+
+export const Logo = ({width, height, style}: Props) => {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, style]}>
       <Image
-        style={styles.logo}
+        style={[
+          styles.logo,
+          {width, height},
+          !!width && {borderRadius: width / 2},
+        ]}
         source={require('@/assets/images/app_logo.png')}
       />
-      <Text variant="bodyLarge">RunBattle</Text>
     </View>
   );
 };

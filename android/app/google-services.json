@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "496006798520",
+    "project_id": "runbattle-e879f",
+    "storage_bucket": "runbattle-e879f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:496006798520:android:180e18ca38ebff8dd7684d",
+        "android_client_info": {
+          "package_name": "com.runbattle"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "496006798520-ra6dek9v27e8tubi17thriibbih96hdg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.runbattle",
+            "certificate_hash": "7c3917904948c6ca4408f49cf3d8c3b724b8d626"
+          }
+        },
+        {
+          "client_id": "496006798520-4nmklll2j0h5ba0d1uld3t3li14nrhst.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjX5w6WhU7n5ChJJ6GVBtFzkVpv00SkTU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "496006798520-4nmklll2j0h5ba0d1uld3t3li14nrhst.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

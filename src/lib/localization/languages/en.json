@@ -1,0 +1,59 @@
+{
+  "translation": {
+    "titles": {
+      "signUp": "Registration",
+      "logIn": "Login",
+      "welcome": "Turn every\nrun into an adventure!",
+      "emailVerification": "Email confirmation",
+      "forgotPassword": "Forgot your password?"
+    },
+    "text": {
+      "welcome": "Create unique routes, compete with friends and conquer the leaderboards. Run, earn achievements and become the king of city trails!",
+      "hasAccount": "Already have an account?",
+      "noAccount": "No account?",
+      "logIn": "Login",
+      "signUp": "Register",
+      "emailVerificationDescription": "An email will be sent to your email within a minute, follow the link in the email to confirm your registration.",
+      "waitOneMinuteMessage": "Send again via",
+      "sec": "sec",
+      "forgotPassword": "Enter the email address associated with your account"
+    },
+    "inputs": {
+      "inputFirstNameLabel": "Name",
+      "inputFirstNamePlaceholder": "Enter name",
+      "inputEmailLabel": "Email",
+      "inputEmailPlaceholder": "Enter email",
+      "inputPasswordLabel": "Password",
+      "inputPasswordPlaceholder": "Enter password",
+      "inputConfirmPasswordLabel": "Confirm password",
+      "inputConfirmPasswordPlaceholder": "Confirm your password"
+    },
+    "buttons": {
+      "start": "Get Started",
+      "logIn": "Log In",
+      "signUp": "Register",
+      "sendAgain": "Send Again",
+      "forgotPassword": "Forgot your password?",
+      "send": "Send"
+    },
+    "validation": {
+      "nameValidation": "Enter your name",
+      "emailValidation": "Enter your email",
+      "passwordValidation": "Enter your password",
+      "currentPasswordValidation": "Enter your current password",
+      "confirmPasswordValidation": "Confirm your password",
+      "newPasswordValidation": "Enter your new password",
+      "min5Validation": "Field must be greater than or equal to 5 characters",
+      "min6Validation": "Field must be greater than or equal to 6 characters",
+      "min8Validation": "Field must be greater than or equal to 8 characters",
+      "max4Validation": "Field must be less than or equal to 4 characters",
+      "max32Validation": "Field must be less than or equal to 32 characters",
+      "max50Validation": "Field must be less than or equal to 50 characters",
+      "max64Validation": "Field must be less than or equal to 64 characters",
+      "onlyLatinAndHyphenValidation": "Please enter only alphabetical characters, hyphens (-), and spaces",
+      "emailFormatValidation": "Check your email format",
+      "passwordsMatchValidation": "Password and confirmation password do not match",
+      "passwordFormatValidation": "Password must be at least six characters long, including one uppercase letter, one lowercase letter, one number (0-9), one symbol (e.g. !@#$%^&*), and no spaces"
+    }
+  }
+}
