@@ -14,6 +14,7 @@ type Props = {
   loading?: boolean;
   navigation?: any;
   title?: string | ReactNode;
+  logo?: boolean;
 };
 
 export const ScreenContainer = ({
@@ -24,9 +25,18 @@ export const ScreenContainer = ({
   loading,
   navigation,
   title,
+  logo,
 }: Props) => {
   const {colors} = useTheme();
   const ViewComponent = viewType === 'view' ? View : SafeAreaView;
+
+  const RenderLogo = () => {
+    return (
+      (title || logo) && (
+        <AppHeader logo={logo} naviagtion={navigation} title={title} />
+      )
+    );
+  };
 
   if (type === 'scrollView') {
     return (
@@ -37,7 +47,7 @@ export const ScreenContainer = ({
           </View>
         ) : (
           <>
-            {title && <AppHeader naviagtion={navigation} title={title} />}
+            <RenderLogo />
             <ScrollView
               contentContainerStyle={[
                 {backgroundColor: colors.background},
@@ -64,7 +74,7 @@ export const ScreenContainer = ({
         </View>
       ) : (
         <>
-          {title && <AppHeader naviagtion={navigation} title={title} />}
+          <RenderLogo />
           {children}
         </>
       )}

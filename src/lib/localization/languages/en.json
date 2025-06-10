@@ -34,7 +34,8 @@
       "signUp": "Register",
       "sendAgain": "Send Again",
       "forgotPassword": "Forgot your password?",
-      "send": "Send"
+      "send": "Send",
+      "home": "Home"
     },
     "validation": {
       "nameValidation": "Enter your name",

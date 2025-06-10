@@ -1,3 +1,4 @@
+import {defaultContainerStyle} from '@/styles';
 import React from 'react';
 import {
   ActivityIndicator,
@@ -12,9 +13,15 @@ type Props = {
   style?: StyleProp<ViewStyle>;
   barStyle?: 'light-content' | 'dark-content';
   backgroundColor?: string;
+  absolute?: boolean;
 };
 
-export const Spinner = ({style, backgroundColor, barStyle}: Props) => {
+export const Spinner = ({
+  style,
+  absolute,
+  backgroundColor,
+  barStyle,
+}: Props) => {
   const {dark, colors} = useTheme();
 
   return (
@@ -23,7 +30,8 @@ export const Spinner = ({style, backgroundColor, barStyle}: Props) => {
         color={colors.primary}
         size={'large'}
         style={[
-          styles.container,
+          defaultContainerStyle,
+          absolute && styles.container,
           {backgroundColor: backgroundColor ?? colors.background},
           style,
         ]}

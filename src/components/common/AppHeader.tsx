@@ -6,10 +6,17 @@ type Props = {
   children?: ReactNode;
   title?: string | ReactNode;
   naviagtion?: any;
+  logo?: boolean;
   closeModal?: () => void;
 };
 
-export const AppHeader = ({title, children, naviagtion, closeModal}: Props) => {
+export const AppHeader = ({
+  title,
+  logo,
+  children,
+  naviagtion,
+  closeModal,
+}: Props) => {
   const goBack = () => {
     naviagtion.goBack();
   };
@@ -21,7 +28,9 @@ export const AppHeader = ({title, children, naviagtion, closeModal}: Props) => {
           onPress={() => (closeModal ? closeModal() : goBack())}
         />
       )}
-      <Appbar.Content title={title ?? <Logo />} />
+      <Appbar.Content
+        title={logo ? <Logo title={title as string} /> : title ? title : ''}
+      />
       {children}
     </Appbar.Header>
   );

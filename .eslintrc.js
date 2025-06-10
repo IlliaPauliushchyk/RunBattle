@@ -3,6 +3,7 @@ module.exports = {
   extends: ['@react-native', 'plugin:@tanstack/query/recommended'],
   plugins: ['prefer-arrow-functions'],
   rules: {
+    'react/no-unstable-nested-components': 'off',
     // 'prettier/prettier': ['warn'],
     '@typescript-eslint/no-unused-vars': ['warn'],
     'no-unused-vars': 'off',

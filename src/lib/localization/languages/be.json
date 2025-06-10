@@ -34,7 +34,8 @@
       "signUp": "Зарэгістравацца",
       "sendAgain": "Адправіць яшчэ раз",
       "forgotPassword": "Забыліся свой пароль?",
-      "send": "Даслаць"
+      "send": "Даслаць",
+      "home": "Галоўная"
     },
     "validation": {
       "nameValidation": "Увядзіце сваё імя",

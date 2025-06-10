@@ -1,5 +1,7 @@
 #import "AppDelegate.h"
 #import <Firebase.h>
+#import <GoogleMaps/GoogleMaps.h>
+#import "RNCConfig.h"
 
 #import <React/RCTBundleURLProvider.h>
 
@@ -7,6 +9,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  NSString *mapsApiKey = [RNCConfig envFor:@"GOOGLE_MAPS_API_KEY"];
+  [GMSServices provideAPIKey:mapsApiKey];
   [FIRApp configure];
   self.moduleName = @"RunBattle";
   // You can add your custom initial props in the dictionary below.
