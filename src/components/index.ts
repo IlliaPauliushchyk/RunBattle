@@ -10,3 +10,5 @@ export * from './common/Logo';
 export * from './common/ScreenContainer';
 export * from './common/SmsCodeTimer';
 export * from './common/Spinner';
+export * from './home/HomeMainContent';
+export * from './home/HomeRouteSettings';

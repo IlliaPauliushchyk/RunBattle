@@ -5,7 +5,8 @@
       "logIn": "Login",
       "welcome": "Turn every\nrun into an adventure!",
       "emailVerification": "Email confirmation",
-      "forgotPassword": "Forgot your password?"
+      "forgotPassword": "Forgot your password?",
+      "chooseTraining": "Choose your training"
     },
     "text": {
       "welcome": "Create unique routes, compete with friends and conquer the leaderboards. Run, earn achievements and become the king of city trails!",
@@ -16,7 +17,8 @@
       "emailVerificationDescription": "An email will be sent to your email within a minute, follow the link in the email to confirm your registration.",
       "waitOneMinuteMessage": "Send again via",
       "sec": "sec",
-      "forgotPassword": "Enter the email address associated with your account"
+      "forgotPassword": "Enter the email address associated with your account",
+      "hi": "Hi"
     },
     "inputs": {
       "inputFirstNameLabel": "Name",
@@ -35,7 +37,9 @@
       "sendAgain": "Send Again",
       "forgotPassword": "Forgot your password?",
       "send": "Send",
-      "home": "Home"
+      "home": "Home",
+      "routes": "Routes",
+      "settings": "Settings"
     },
     "validation": {
       "nameValidation": "Enter your name",

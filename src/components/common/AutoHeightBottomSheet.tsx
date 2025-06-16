@@ -2,7 +2,7 @@ import BottomSheet, {
   BottomSheetProps,
   BottomSheetView,
 } from '@gorhom/bottom-sheet';
-import React, {forwardRef, ReactNode} from 'react';
+import React, {ReactNode, forwardRef} from 'react';
 
 type AutoHeightBottomSheetProps = {
   children: ReactNode;
@@ -17,7 +17,6 @@ export const AutoHeightBottomSheet = forwardRef<
     <BottomSheet
       ref={ref}
       index={0}
-      enablePanDownToClose
       enableDynamicSizing
       maxDynamicContentSize={maxDynamicContentSize}
       {...rest}>

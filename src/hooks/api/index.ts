@@ -1,3 +1,4 @@
+export * from './useGetUserData';
 export * from './useSaveUserMutation';
 export * from './useSendEmailVerification';
 export * from './useSendPasswordResetEmail';

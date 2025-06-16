@@ -24,7 +24,7 @@ export const withStatusBar = (Screen: any) => {
           if (Platform.OS === 'android') {
             StatusBar.setBackgroundColor(colors.background);
           }
-          SystemNavigationBar.setNavigationColor(colors.background);
+          SystemNavigationBar.setNavigationColor(colors.surfaceVariant);
           StatusBar.setBarStyle(dark ? 'light-content' : 'dark-content');
       }
     });

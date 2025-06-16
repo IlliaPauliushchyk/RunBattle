@@ -1,4 +1,5 @@
-import {AppDispatch, setIsWaitForVerification, setUser} from '@/store';
+import {DEFAULT_ROUTE_SETTINGS} from '@/constants';
+import {AppDispatch, IUser, setIsLoggedIn, setUser} from '@/store';
 import auth, {FirebaseAuthTypes} from '@react-native-firebase/auth';
 import crashlytics from '@react-native-firebase/crashlytics';
 import firestore from '@react-native-firebase/firestore';
@@ -16,6 +17,7 @@ const saveUserToFirestore = async (uid: string, data: UserProfile) => {
       .doc(uid)
       .set({
         ...data,
+        settings: DEFAULT_ROUTE_SETTINGS,
         createdAt: firestore.FieldValue.serverTimestamp(),
       });
 
@@ -68,9 +70,9 @@ export const completeUserRegistration = async (
         uid: user.uid,
         email,
         displayName,
+        settings: DEFAULT_ROUTE_SETTINGS,
       }),
     );
-    dispatch(setIsWaitForVerification(false));
 
     await crashlytics().setAttributes({
       user_id: user.uid,
@@ -82,7 +84,6 @@ export const completeUserRegistration = async (
       error instanceof Error ? error.message : 'Unknown error';
     await crashlytics().recordError(new Error(errorMessage));
 
-    dispatch(setIsWaitForVerification(false));
     throw error;
   }
 };
@@ -159,6 +160,91 @@ export const sendEmailVerification = async (): Promise<AuthResult> => {
       last_error_code: errorCode,
       error_handled: String(!shouldLogError),
     });
+
+    return {
+      success: false,
+      error: {code: errorCode, message: errorMessage},
+    };
+  }
+};
+
+export const getUser = async (
+  uid: string,
+  email: string,
+  emailVerified: boolean,
+  dispatch: AppDispatch,
+  setLoading: (loading: boolean) => void,
+  logoutUser: () => void,
+): Promise<AuthResult> => {
+  try {
+    await crashlytics().log('GetUser: Process started');
+    await crashlytics().setAttributes({
+      auth_phase: 'user_fetch_init',
+      user_id: uid,
+    });
+
+    const documentSnapshot = await firestore()
+      .collection('users')
+      .doc(uid)
+      .get();
+
+    if (!documentSnapshot.exists) {
+      throw new Error('firestore/user-not-found');
+    }
+
+    const userData = documentSnapshot.data() as IUser;
+
+    if (userData.displayName) {
+      dispatch(setUser({...userData, email}));
+    }
+
+    dispatch(setIsLoggedIn(true));
+    setLoading(false);
+
+    await crashlytics().log('GetUser: Data fetched successfully');
+    return {
+      success: true,
+      user: {user: {uid, email}} as FirebaseAuthTypes.UserCredential,
+    };
+  } catch (error) {
+    let errorCode = 'internal/unknown-error';
+    let errorMessage = 'Failed to fetch user data';
+    let shouldLogError = true;
+
+    if (error instanceof Error) {
+      errorCode = error.message;
+
+      if (errorCode === 'firestore/user-not-found') {
+        errorMessage = 'User data not found';
+        shouldLogError = false;
+      }
+    }
+
+    if (shouldLogError) {
+      const errorToReport =
+        error instanceof Error ? error : new Error(errorMessage);
+
+      await crashlytics().log(`GetUser Error: ${errorCode}`);
+      await crashlytics().recordError(errorToReport);
+
+      if (errorToReport.stack) {
+        await crashlytics().log(errorToReport.stack);
+      }
+    }
+
+    await crashlytics().setAttributes({
+      auth_phase: 'user_fetch_failed',
+      last_error_code: errorCode,
+      error_handled: String(!shouldLogError),
+    });
+
+    // Обработка по аналогии с исходным кодом
+    if (emailVerified) {
+      logoutUser();
+    } else {
+      dispatch(setIsLoggedIn(true));
+      setLoading(false);
+    }
 
     return {
       success: false,

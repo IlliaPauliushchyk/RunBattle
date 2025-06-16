@@ -125,7 +125,11 @@ export const SignUpForm = ({onSubmit, initialValues, loading, error}: any) => {
         onPress={handleSubmit}>
         {t('buttons.signUp')}
       </AppButton>
-      {error ? <HelperText type="error">{error}</HelperText> : null}
+      {error ? (
+        <HelperText type="error">
+          {String(error?.message ? error.message : error)}
+        </HelperText>
+      ) : null}
     </>
   );
 };
