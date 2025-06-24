@@ -11,14 +11,22 @@ import {AutoHeightBottomSheet} from '../common/AutoHeightBottomSheet';
 
 type HomeMainContentProps = {
   openSettings: () => void;
+  generateRoutes: () => Promise<void>;
+  closeMenu: () => void;
+  loading: boolean;
 };
 
 export const HomeMainContent = forwardRef<BottomSheet, HomeMainContentProps>(
-  ({openSettings}, ref) => {
+  ({openSettings, generateRoutes, closeMenu, loading}, ref) => {
     const {colors} = useTheme();
     const {t} = useTranslation();
-    const {user} = useAppSelector(selectUser);
+    const {displayName} = useAppSelector(selectUser);
 
+    const handleGenerateRoutes = async () => {
+      generateRoutes().then(() => {
+        closeMenu();
+      });
+    };
     return (
       <AutoHeightBottomSheet
         ref={ref}
@@ -26,12 +34,18 @@ export const HomeMainContent = forwardRef<BottomSheet, HomeMainContentProps>(
         handleIndicatorStyle={{backgroundColor: colors.background}}>
         <BottomSheetView style={styles.conainer}>
           <AppText variant="headlineSmall" fontWeight="bold">
-            {t('text.hi')}, {user.displayName}
+            {t('text.hi')}, {displayName}
           </AppText>
           <AppText mb={20} variant="bodyLarge">
             {t('titles.chooseTraining')}
           </AppText>
-          <AppButton mb={10}>{t('buttons.routes')}</AppButton>
+          <AppButton
+            loading={loading}
+            disabled={loading}
+            onPress={handleGenerateRoutes}
+            mb={10}>
+            {t('buttons.routes')}
+          </AppButton>
           <AppButton onPress={openSettings} mode="outlined" mb={20}>
             {t('buttons.settings')}
           </AppButton>

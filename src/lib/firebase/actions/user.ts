@@ -195,7 +195,7 @@ export const getUser = async (
     const userData = documentSnapshot.data() as IUser;
 
     if (userData.displayName) {
-      dispatch(setUser({...userData, email}));
+      dispatch(setUser({...userData, email, uid}));
     }
 
     dispatch(setIsLoggedIn(true));

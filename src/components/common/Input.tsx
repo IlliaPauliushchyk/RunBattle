@@ -46,6 +46,7 @@ interface DefaultProps
   numberOfLines?: number;
   leftIcon?: React.ReactNode;
   onPress?: () => void;
+  editable?: boolean;
 }
 
 export const Input = ({
@@ -64,6 +65,7 @@ export const Input = ({
   numberOfLines,
   leftIcon,
   onPress,
+  editable,
   ...otherProps
 }: DefaultProps) => {
   const [secureEntry, setSecureEntry] = useState(secureTextEntry);
@@ -94,7 +96,7 @@ export const Input = ({
         borderless
         disabled={!onPress}
         onPress={onPress}
-        style={touchableStyle}>
+        style={[onPress && styles.notErrorInput, touchableStyle]}>
         <TextInput
           mode="outlined"
           left={leftIcon}
@@ -105,10 +107,13 @@ export const Input = ({
           error={!!error}
           right={icon}
           secureTextEntry={!!(secureEntry || isSecure)}
-          style={[inputContainerStyle, !error && styles.notErrorInput]}
+          style={[
+            inputContainerStyle,
+            !error && !onPress && styles.notErrorInput,
+          ]}
           contentStyle={[inputStyle, multiline && styles.multilineInput]}
           allowFontScaling={false}
-          editable={!onPress}
+          editable={!onPress || editable}
           {...otherProps}
         />
       </TouchableRipple>

@@ -18,7 +18,13 @@
       "waitOneMinuteMessage": "Отправить еще раз через",
       "sec": "сек",
       "forgotPassword": "Введите адрес электронной почты, связанный с вашей учетной записью",
-      "hi": "Привет"
+      "hi": "Привет",
+      "easy": "Легкий",
+      "medium": "Средний",
+      "hard": "Тяжёлый",
+      "any": "Любой",
+      "asphalt": "Асфальт",
+      "dirt": "Грунт"
     },
     "inputs": {
       "inputFirstNameLabel": "Имя",
@@ -28,7 +34,11 @@
       "inputPasswordLabel": "Пароль",
       "inputPasswordPlaceholder": "Введите пароль",
       "inputConfirmPasswordLabel": "Подтвердить пароль",
-      "inputConfirmPasswordPlaceholder": "Подтвердите пароль"
+      "inputConfirmPasswordPlaceholder": "Подтвердите пароль",
+      "inputDifficultyLabel": "Сложность",
+      "inputSurfaceLabel": "Поверхность",
+      "inputRouteCountLabel": "Количество маршрутов",
+      "inputRouteCountPlaceholder": "Введите количество"
     },
     "buttons": {
       "start": "Начать",
@@ -39,7 +49,9 @@
       "send": "Отправить",
       "home": "Главная",
       "routes": "Маршруты",
-      "settings": "Настройки"
+      "settings": "Настройки",
+      "save": "Сохранить",
+      "back": "Назад"
     },
     "validation": {
       "nameValidation": "Введите своё имя",

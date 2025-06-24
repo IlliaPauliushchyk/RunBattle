@@ -32,7 +32,7 @@
 		<true/>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string>RunBattle использует вашу геолокацию для отслеживания маршрута во время тренировки.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>MaterialDesignIcons.ttf</string>
@@ -55,5 +55,13 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    	<string>RunBattle требует доступ к геолокации в фоновом режиме для работы трекинга.</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    	<string>RunBattle требует доступ к геолокации в фоновом режиме для работы трекинга.</string>
+	<key>UIBackgroundModes</key>
+    <array>
+        <string>location</string>
+    </array>
 </dict>
 </plist>

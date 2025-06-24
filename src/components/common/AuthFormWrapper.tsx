@@ -2,7 +2,7 @@ import {Screens} from '@/constants';
 import {useNavigation} from '@react-navigation/native';
 import React, {ReactNode} from 'react';
 import {useTranslation} from 'react-i18next';
-import {StyleSheet, View} from 'react-native';
+import {Platform, StyleSheet, View} from 'react-native';
 import KeyboardDismissView from 'react-native-keyboard-dismiss-view';
 import {useTheme} from 'react-native-paper';
 import {AppText} from './AppText';
@@ -39,8 +39,7 @@ export const AuthFormWrapper = ({children, type}: AuthFormWrapperProps) => {
 
   return (
     <ScreenContainer
-    //   viewType={Platform.OS === 'ios' ? 'safeAreaView' : undefined}
-    >
+      viewType={Platform.OS === 'ios' ? 'safeAreaView' : undefined}>
       <KeyboardDismissView style={styles.container}>
         <Logo style={styles.logo} width={LOGO_SIZE} height={LOGO_SIZE} />
         <View>{children}</View>

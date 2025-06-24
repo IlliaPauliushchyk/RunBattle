@@ -18,7 +18,13 @@
       "waitOneMinuteMessage": "Send again via",
       "sec": "sec",
       "forgotPassword": "Enter the email address associated with your account",
-      "hi": "Hi"
+      "hi": "Hi",
+      "easy": "Easy",
+      "medium": "Medium",
+      "hard": "Hard",
+      "any": "Any",
+      "asphalt": "Asphalt",
+      "dirt": "Dirt"
     },
     "inputs": {
       "inputFirstNameLabel": "Name",
@@ -28,7 +34,11 @@
       "inputPasswordLabel": "Password",
       "inputPasswordPlaceholder": "Enter password",
       "inputConfirmPasswordLabel": "Confirm password",
-      "inputConfirmPasswordPlaceholder": "Confirm your password"
+      "inputConfirmPasswordPlaceholder": "Confirm your password",
+      "inputDifficultyLabel": "Difficulty",
+      "inputSurfaceLabel": "Surface",
+      "inputRouteCountLabel": "Route count",
+      "inputRouteCountPlaceholder": "Enter quantity"
     },
     "buttons": {
       "start": "Get Started",
@@ -39,7 +49,9 @@
       "send": "Send",
       "home": "Home",
       "routes": "Routes",
-      "settings": "Settings"
+      "settings": "Settings",
+      "save": "Save",
+      "back": "Back"
     },
     "validation": {
       "nameValidation": "Enter your name",

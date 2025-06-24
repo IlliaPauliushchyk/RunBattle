@@ -18,7 +18,13 @@
       "waitOneMinuteMessage": "Даслаць яшчэ раз праз",
       "sec": "сек",
       "forgotPassword": "Увядзіце адрас электроннай пошты, звязаны з вашым уліковым запісам",
-      "hi": "Прывітанне"
+      "hi": "Прывітанне",
+      "easy": "Лёгкая",
+      "medium": "Сярэдняя",
+      "hard": "Цяжкая",
+      "any": "Любая",
+      "asphalt": "Асфальт",
+      "dirt": "Грунт"
     },
     "inputs": {
       "inputFirstNameLabel": "Імя",
@@ -28,7 +34,11 @@
       "inputPasswordLabel": "Пароль",
       "inputPasswordPlaceholder": "Увядзіце пароль",
       "inputConfirmPasswordLabel": "Пацвердзіць пароль",
-      "inputConfirmPasswordPlaceholder": "Пацвердзіце пароль"
+      "inputConfirmPasswordPlaceholder": "Пацвердзіце пароль",
+      "inputDifficultyLabel": "Складанасць",
+      "inputSurfaceLabel": "Паверхня",
+      "inputRouteCountLabel": "Колькасць маршрутаў",
+      "inputRouteCountPlaceholder": "Увядзіце колькасць"
     },
     "buttons": {
       "start": "Пачаць",
@@ -39,7 +49,9 @@
       "send": "Даслаць",
       "home": "Галоўная",
       "routes": "Маршруты",
-      "settings": "Налады"
+      "settings": "Налады",
+      "save": "Захаваць",
+      "back": "Назад"
     },
     "validation": {
       "nameValidation": "Увядзіце сваё імя",

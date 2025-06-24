@@ -8,6 +8,7 @@ export interface ISettings {
   routeCount: number;
 }
 export interface IUser {
+  uid: string | null;
   displayName: string | null;
   email: string | null;
   settings: ISettings | null;
@@ -19,6 +20,7 @@ type UserState = {
 
 const initialState: UserState = {
   user: {
+    uid: null,
     displayName: null,
     email: null,
     settings: null,
@@ -35,12 +37,20 @@ const userSlice = createSlice({
         user: action.payload,
       };
     },
+    setUserSettings: (state, action) => {
+      return {
+        ...state,
+        user: {...state.user, settings: action.payload},
+      };
+    },
   },
 });
 
-export const selectUser = (state: RootState) => state.user;
+export const selectUser = (state: RootState) => state.user.user;
+export const selectUserSettings = (state: RootState) =>
+  state.user.user.settings;
 
 export const {
-  actions: {setUser},
+  actions: {setUser, setUserSettings},
   reducer: userReducer,
 } = userSlice;

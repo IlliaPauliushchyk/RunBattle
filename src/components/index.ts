@@ -7,6 +7,7 @@ export * from './common/AuthFormWrapper';
 export * from './common/AutoHeightBottomSheet';
 export * from './common/Input';
 export * from './common/Logo';
+export * from './common/Picker';
 export * from './common/ScreenContainer';
 export * from './common/SmsCodeTimer';
 export * from './common/Spinner';

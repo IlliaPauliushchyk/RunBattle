@@ -93,7 +93,7 @@ export const SignInForm = ({onSubmit, initialValues, loading, error}: any) => {
         borderless
         style={styles.forgotPassword}
         onPress={goToForgotPassword}>
-        <AppText mt={-5} color={colors.primary} size={14}>
+        <AppText mt={-3} color={colors.primary} size={14}>
           {t('buttons.forgotPassword')}
         </AppText>
       </TouchableRipple>

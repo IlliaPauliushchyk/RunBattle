@@ -1,6 +1,5 @@
 import {AuthFormWrapper} from '@/components';
-import {useAppDispatch, useSaveUserMutation, useSignUpMutation} from '@/hooks';
-import {setIsWaitForVerification} from '@/store';
+import {useSaveUserMutation, useSignUpMutation} from '@/hooks';
 import React from 'react';
 import {SignUpForm} from '../forms/SignUpForm';
 
@@ -12,8 +11,6 @@ export interface ISighUpValues {
 }
 
 export const SignUpScreen = () => {
-  const dispatch = useAppDispatch();
-
   const {
     mutateAsync: signUp,
     isPending,
@@ -35,7 +32,6 @@ export const SignUpScreen = () => {
       await signUp({email, password});
       await saveUser({email, displayName});
     } catch (e) {
-      dispatch(setIsWaitForVerification(false));
       console.error(e);
     }
   };
