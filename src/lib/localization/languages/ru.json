@@ -24,7 +24,13 @@
       "hard": "Тяжёлый",
       "any": "Любой",
       "asphalt": "Асфальт",
-      "dirt": "Грунт"
+      "dirt": "Грунт",
+      "route": "Маршрут",
+      "km": "км",
+      "drop": "перепад",
+      "m": "м",
+      "steepClimb": "Крутой подъем",
+      "steepDescent": "Крутой спуск"
     },
     "inputs": {
       "inputFirstNameLabel": "Имя",
@@ -51,7 +57,8 @@
       "routes": "Маршруты",
       "settings": "Настройки",
       "save": "Сохранить",
-      "back": "Назад"
+      "back": "Назад",
+      "select": "Выбрать"
     },
     "validation": {
       "nameValidation": "Введите своё имя",

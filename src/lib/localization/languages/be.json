@@ -24,7 +24,13 @@
       "hard": "Цяжкая",
       "any": "Любая",
       "asphalt": "Асфальт",
-      "dirt": "Грунт"
+      "dirt": "Грунт",
+      "route": "Маршрут",
+      "km": "км",
+      "drop": "перапад",
+      "m": "м",
+      "steepClimb": "Круты ўздым",
+      "steepDescent": "Круты спуск"
     },
     "inputs": {
       "inputFirstNameLabel": "Імя",
@@ -51,7 +57,8 @@
       "routes": "Маршруты",
       "settings": "Налады",
       "save": "Захаваць",
-      "back": "Назад"
+      "back": "Назад",
+      "select": "Выбраць"
     },
     "validation": {
       "nameValidation": "Увядзіце сваё імя",

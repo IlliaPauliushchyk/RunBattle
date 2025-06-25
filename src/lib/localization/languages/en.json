@@ -24,7 +24,13 @@
       "hard": "Hard",
       "any": "Any",
       "asphalt": "Asphalt",
-      "dirt": "Dirt"
+      "dirt": "Dirt",
+      "route": "Route",
+      "km": "km",
+      "drop": "drop",
+      "m": "m",
+      "steepClimb": "Steep Climb",
+      "steepDescent": "Steep Descent"
     },
     "inputs": {
       "inputFirstNameLabel": "Name",
@@ -51,7 +57,8 @@
       "routes": "Routes",
       "settings": "Settings",
       "save": "Save",
-      "back": "Back"
+      "back": "Back",
+      "select": "Select"
     },
     "validation": {
       "nameValidation": "Enter your name",

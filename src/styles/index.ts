@@ -9,5 +9,9 @@ export const defaultRowStyle = {
   alignItems: 'center',
 } as StyleProp<ViewStyle>;
 
+export const defaultNoMaarginStyle = {
+  margin: 0,
+} as StyleProp<ViewStyle>;
+
 export * from './colors';
 export * from './navigation';

@@ -1,7 +1,8 @@
 /* eslint-disable no-bitwise */
 import {selectUser} from '@/store';
 import axios from 'axios';
-import {useState} from 'react';
+import {useRef, useState} from 'react';
+import MapView from 'react-native-maps';
 import {useAppSelector} from './redux';
 import {useGetLocation} from './useGetLocation';
 
@@ -22,7 +23,7 @@ interface RoutePoint {
 }
 
 // Тип для данных о высоте
-interface ElevationData {
+export interface ElevationData {
   latitude: number;
   longitude: number;
   elevation: number;
@@ -36,7 +37,21 @@ export interface GeneratedRoute {
   id: string;
 }
 
+export interface ElevationPoint {
+  elevation: number;
+}
+
+export interface ElevationStats {
+  ascent: string;
+  descent: string;
+  maxDiff: string;
+  minElevation: number;
+  maxElevation: number;
+}
+
 export const useGenerateRoutes = () => {
+  const mapRef = useRef<MapView>(null);
+
   const {currentLocation} = useGetLocation();
   const {settings: params} = useAppSelector(selectUser);
 
@@ -44,6 +59,8 @@ export const useGenerateRoutes = () => {
   const [error, setError] = useState<string | null>(null);
   const [routes, setRoutes] = useState<GeneratedRoute[]>([]);
   const [showRouteSelection, setShowRouteSelection] = useState<boolean>(false);
+
+  const [selectedRouteIndex, setSelectedRouteIndex] = useState(0);
 
   // Настройки сложности
   const difficultySettings: DifficultySettings = {
@@ -275,5 +292,62 @@ export const useGenerateRoutes = () => {
     }
   };
 
-  return {generateRoutes, routes, loading, error, showRouteSelection};
+  const getElevationStats = (
+    elevations: ElevationPoint[] | null | undefined,
+  ): ElevationStats | null => {
+    if (!elevations || elevations.length < 2) {
+      return null;
+    }
+
+    let totalAscent = 0;
+    let totalDescent = 0;
+    let maxElevation = -Infinity;
+    let minElevation = Infinity;
+
+    for (let i = 1; i < elevations.length; i++) {
+      const diff = elevations[i].elevation - elevations[i - 1].elevation;
+      if (diff > 0) {
+        totalAscent += diff;
+      } else {
+        totalDescent -= diff;
+      }
+
+      maxElevation = Math.max(maxElevation, elevations[i].elevation);
+      minElevation = Math.min(minElevation, elevations[i].elevation);
+    }
+
+    return {
+      ascent: totalAscent.toFixed(0),
+      descent: totalDescent.toFixed(0),
+      maxDiff: (maxElevation - minElevation).toFixed(0),
+      minElevation,
+      maxElevation,
+    };
+  };
+
+  const centerMapOnRoute = (route: GeneratedRoute) => {
+    if (!route.points.length || !mapRef.current) {
+      return;
+    }
+
+    const coordinates = route.points;
+    mapRef.current.fitToCoordinates(coordinates, {
+      edgePadding: {top: 50, right: 50, bottom: 150, left: 50},
+      animated: true,
+    });
+  };
+
+  return {
+    generateRoutes,
+    getElevationStats,
+    centerMapOnRoute,
+    setSelectedRouteIndex,
+    setRoutes,
+    selectedRouteIndex,
+    mapRef,
+    routes,
+    loading,
+    error,
+    showRouteSelection,
+  };
 };

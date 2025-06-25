@@ -110,3 +110,9 @@ const {LightTheme, DarkTheme} = adaptNavigationTheme({
 
 export const CombinedDefaultTheme = merge(LightTheme, PaperTheme);
 export const CombinedDarkTheme = merge(DarkTheme, PaperDarkTheme);
+
+export const commonColors = {
+  lightRed: 'rgba(255, 50, 50, 0.5)',
+  lightGreen: 'rgba(50, 200, 50, 0.5)',
+  lightPrimary: 'rgba(255, 107, 53, 0.2)',
+};

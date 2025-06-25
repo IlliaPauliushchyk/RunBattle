@@ -11,5 +11,7 @@ export * from './common/Picker';
 export * from './common/ScreenContainer';
 export * from './common/SmsCodeTimer';
 export * from './common/Spinner';
+export * from './home/ElevationsChart';
 export * from './home/HomeMainContent';
 export * from './home/HomeRouteSettings';
+export * from './home/HomeRoutesList';
